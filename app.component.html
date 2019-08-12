@@ -1,0 +1,17 @@
+ <div class="container">
+        <div style="text-align:center">
+                <h2>
+                  Welcome to {{ title }}
+              </h2>
+        </div>
+        <div class="tab">
+                <button class="tablinks"  (click)="applyFilter('below20');">Below 20yrs</button>
+                <button class="tablinks" (click)="applyFilter('20to40');">20 to 40 yrs</button>
+                <button class="tablinks" (click)="applyFilter('40to60');">40 to 60 yrs</button>
+                <button class="tablinks" (click)="applyFilter('above60');">Above 60 yrs</button>
+         </div>
+         <div class="tabcontent" *ngIf="dataSource">
+          <div class="selfilter">{{selectedFilter}}</div>
+        <app-emp-details-table [dataSource]="dataSource"></app-emp-details-table>
+        </div>
+</div>
